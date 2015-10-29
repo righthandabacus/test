@@ -1,9 +1,9 @@
 Github Flavored Markdown syntax
 ===============================
 
-Paragraphs are separated by empty lines, **bold** uses __two__ asterisk or underline while *italic* uses _one_ only. ~~Strikethrough~~ or ``monospace`` can be done by tilde and backquote. Inline `code` has only one backquote. Escaping markup can be \*done\* by backslash preceding any of ``\ ` * _ { } [ ] ( ) # + - . !``. You can even [link to Google!](http://google.com "with optional tooltip") using a parenthesis for link and square bracket for text.
+Paragraphs are separated by empty lines, **bold** uses __two__ asterisk or underline while *italic* uses _one_ only. ~~Strikethrough~~ and ``monospace`` by tilde and backquote. Inline `code` has only one backquote. Escape can be \*done\* by backslash preceding any of ``\ ` * _ { } [ ] ( ) # + - . !``. You can even [link to Google!](http://google.com "with optional tooltip") using a parenthesis for URL and square bracket for text.
 
-Code block can be done by indentation of 1-4 spaces
+Code block can be done by indentation of paragraph by 1-4 spaces
 
     like this
 
@@ -17,31 +17,32 @@ markdown = Redcarpet.new("hello world")
 Block quotes is indicated by >:
 > like this, with *markups* supported
 
-* ordered
+* ordered list
 * with multiple
    - levels
-   - with either a \* or - or +
+   - with \* or - or + as bullets
 
 1. Ordered list
 2. is preceded by a number
     1. with nesting
-    2. also supported
+    2. supported
 3. List item in paragraph form or multiple lines.
 
    Like this one, can be done with leading spaces. Or to have  
    a line break without paragraph, keep two trailing space at  
    the line above. (GFM don't need trailing spaces)
 4. Or a list item with code block
+
         needs to be indented by 8 spaces
 
 And horizontal rules can be done by three or more
+
 ---
 hyphens
 ***
 asterisks
 ___
 or underscores
-
 
 
 Tables
@@ -86,12 +87,12 @@ Images
 Images are links with leading exclamation mark (hover to see the title text):
 
 Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/favicon.ico "Fav Icon")
 
 Reference-style: 
 ![alt text][logo]
 
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
+[logo]: https://github.com/favicon.ico "Fav Icon"
 
 
 Task list
@@ -113,4 +114,4 @@ alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
 Others
 ------
-Emoji at http://www.emoji-cheat-sheet.com/
+Emoji :smile: :alien: :v: at http://www.emoji-cheat-sheet.com/
