@@ -1,5 +1,5 @@
 =======================
-RestructuredText syntax
+reStructuredText syntax
 =======================
 :Author: Adrian
 :Info: This file is located at http://github/righthandabacus
@@ -16,54 +16,48 @@ Literal block is introduced by double colon::
 or without colons, as block quotes:
 
     like this with indentation
+        and they may nest
 
-or even quote using > if no indent:
+or even quote using double colon and > if no indent::
 
 > like this
 
 But it is a doctest block if we
 
->>> print "quote like python"
-quote like python
+>>> print "type like python shell"
+type like python shell
 
-|Line blocks is to preserve line breaks and indents.
-|   We simply begine the lines with pipe to make
-| a line block.
+| Line blocks is to preserve line breaks and indents.
+|     We simply begin the lines with pipe to make
+|  a line block.
 
-```ruby
-require 'red carpet'
-markdown = Redcarpet.new("hello world")
-```
+Other supported inline markups are 'interpreted text', 'interpreted text with role':emphasis:, standalone links http://www.google.com
 
-Block quotes is indicated by >:
-> like this, with *markups* supported
+----
 
-* ordered list
-* with multiple
-   - levels
-   - with \* or - or + as bullets
+and horizonal rule is four or more dashes.
+
+.. Two leading dots marks comment, which will not be shown in output
+   but preserved in raw text. (comment text can be empty too)
+
+
+Lists
+=====
+* unordered list
+   - with multiple
+     + levels
+* with \* or - or + as bullets
 
 1. Ordered list
-2. is preceded by a number
-    1. with nesting
-    2. supported
+2. is preceded by "1." or "A." or "(i)" or "#.", etc.
+    a. with nesting
+    b. supported
 3. List item in paragraph form or multiple lines.
 
-   Like this one, can be done with leading spaces. Or to have  
-   a line break without paragraph, keep two trailing space at  
-   the line above. (GFM don't need trailing spaces)
+   Like this one, is also supported.
 4. Or a list item with code block
 
         needs to be indented by 8 spaces
-
-And horizontal rules can be done by three or more
-
----
-hyphens
-***
-asterisks
-___
-or underscores
 
 
 Tables
@@ -101,7 +95,7 @@ column spanning spans
 
 Headers
 -------
-Headers are underlined or under- and overlined by ``-`` ``=`` or ``~``. Same style means section of same level
+Headers are underlined or under- and overlined by ``-`` ``=`` or ``~``. Same style means section of same level. Document title is the unique section header at the beginning of document.
 
 
 Links
