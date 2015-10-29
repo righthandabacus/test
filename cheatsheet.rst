@@ -44,6 +44,15 @@ and horizontal rule is four or more dashes.
    lines before and after)
 
 
+In summary, these are supported inline markup:
+
+*italic*; **bold**; `interpreted text`; `interpreted text
+with role`:emphasis:; ``inline literal text``; standalone hyperlink,
+http://docutils.sourceforge.net; named reference, reStructuredText_;
+`anonymous reference`__; footnote reference, [1]_; citation reference,
+[CIT2002]_; |substitution|; _`inline internal target`.
+
+
 Lists
 =====
 * unordered list
@@ -101,26 +110,46 @@ Headers
 Headers are underlined or under- and overlined by ``-`` ``=`` or ``~``. Same style means section of same level. Document title is the unique section header at the beginning of document.
 
 
-Links
-=====
-Besides [link like this](http://www.google.com), we can also have [relative links](../dir/file.txt) or [reference-style link][myref] or [numbered-reference][1] or [simply the link text] or type in URL directly http://slashdot.org or <http://github.com>
+Links, footnotes, and citations
+===============================
+.. _top:
 
-Remember to define the links somewhere.
+External links, like Google_ or `Slashdot <http://slashdot.org>`_ or anonymously __http://duckduckgo.com. Note the underscore character.
 
-[myref]: http://example.com/
-[1]: http://example.org/
-[simply the link text]: http://example.net/
+.. _Google: http://www.google.com
+
+And if you have a target, we can make an `indirect target`__
+
+__ Google_
 
 
-Images
-======
+Internal target like the top_ of this section, or `Links, footnotes, and citations`_ section title is also a target implicitly. Or define an inline internal target like _this and you can use like this_.
+
+Similar to link is footnotes [1]_ which may be rearranged [#] with auto-numbering or [#label] labeled. Besides number, we can [*] make auto-symboled [*] foot notes as well.
+
+.. [1] This is a footnote
+.. [#] Auto-numbered footnote
+.. [#label] and auto-numbered but labeled footnote
+.. [*] Symboled footnote
+.. [*] Another symbol
+
+Text enclosed in square bracket is citations [CIT01]_. And citation labels can contain alphanumerics (case insensitive), underlines, hyphens, and fullstops [like-this]_. Once a citation is created, it is a target too, like cit01_.
+
+.. [Cit01] John Doe, ''An article'', 2001.
+.. [like-this] Citation text here
+
+Images and substitutions
+========================
 Images is a directive with optional parameters
 
-.. image:: favicon.co
+.. image:: /favicon.ico
     :height: 50
     :width: 50
     :scale: 100
 
+And using substitution is the only way to make inline |icon| pictures.
+
+.. |icon| image:: http://github.com/favicon.ico
 
 
 ================  ============================================================
@@ -139,15 +168,6 @@ Comment           .. is anything else
 Empty Comment     (".." on a line by itself, with blank lines before & after,
                   used to separate indentation contexts)
 ================  ============================================================
-
-
-Inline Markup
-=============
-*emphasis*; **strong emphasis**; `interpreted text`; `interpreted text
-with role`:emphasis:; ``inline literal text``; standalone hyperlink,
-http://docutils.sourceforge.net; named reference, reStructuredText_;
-`anonymous reference`__; footnote reference, [1]_; citation reference,
-[CIT2002]_; |substitution|; _`inline internal target`.
 
 Directive Quick Reference
 =========================
