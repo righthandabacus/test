@@ -112,7 +112,7 @@ Headers are underlined or under- and overlined by ``-`` ``=`` or ``~``. Same sty
 
 Links, footnotes, and citations
 ===============================
-.. _top:
+.. _`this section`:
 
 External links, like Google_ or `Slashdot <http://slashdot.org>`_ or anonymously __http://duckduckgo.com. Note the underscore character.
 
@@ -123,13 +123,13 @@ And if you have a target, we can make an `indirect target`__
 __ Google_
 
 
-Internal target like the top_ of this section, or `Links, footnotes, and citations`_ section title is also a target implicitly. Or define an inline internal target like _this and you can use like this_.
+Internal target like the top of `this section`_, or `Links, footnotes, and citations`_ section title is also a target implicitly. Or define an inline internal target like _this and you can use like this_.
 
-Similar to link is footnotes [1]_ which may be rearranged [#] with auto-numbering or [#label] labeled. Besides number, we can [*] make auto-symboled [*] foot notes as well.
+Similar to link is footnotes [1]_ which may be rearranged [#]_ with auto-numbering or [#label]_ labeled. Besides number, we can [*]_ make auto-symboled [*]_ foot notes as well.
 
 .. [1] This is a footnote
 .. [#] Auto-numbered footnote
-.. [#label] and auto-numbered but labeled footnote
+.. [#label] and auto-numbered but labeled footnote, aka label_
 .. [*] Symboled footnote
 .. [*] Another symbol
 
@@ -142,33 +142,16 @@ Images and substitutions
 ========================
 Images is a directive with optional parameters
 
-.. image:: /favicon.ico
+.. image:: https://github.com/favicon.ico
     :height: 50
     :width: 50
     :scale: 100
 
 And using substitution is the only way to make inline |icon| pictures.
 
-.. |icon| image:: http://github.com/favicon.ico
+.. |icon| image:: https://github.com/favicon.ico
 
 
-================  ============================================================
-Explicit Markup   Examples (visible in the `text source`_)
-================  ============================================================
-Footnote          .. [1] Manually numbered or [#] auto-numbered
-                     (even [#labelled]) or [*] auto-symbol
-Citation          .. [CIT2002] A citation.
-Hyperlink Target  .. _reStructuredText: http://docutils.sf.net/rst.html
-                  .. _indirect target: reStructuredText_
-                  .. _internal target:
-Anonymous Target  __ http://docutils.sf.net/docs/ref/rst/restructuredtext.html
-Directive ("::")  .. image:: images/biohazard.png
-Substitution Def  .. |substitution| replace:: like an inline directive
-Comment           .. is anything else
-Empty Comment     (".." on a line by itself, with blank lines before & after,
-                  used to separate indentation contexts)
-================  ============================================================
-
 Directive Quick Reference
 =========================
 See <http://docutils.sf.net/docs/ref/rst/directives.html> for full info.
