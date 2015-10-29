@@ -13,26 +13,26 @@ Literal block is introduced by double colon::
 
     like this with indentation
 
+or > if no indent::
+
+> like this
+
 or without colons, as block quotes:
 
     like this with indentation
-    
         and they may nest
-
-or even quote using double colon and > if no indent::
-
-> like this
 
 But it is a doctest block if we
 
 >>> print "type like python shell"
 type like python shell
 
-| Line blocks is to preserve line breaks and indents.
-|     We simply begin the lines with pipe to make
-|  a line block.
+| Line blocks is to preserve line breaks.
+| We simply begin the lines with pipe to make
+  a line block. But a line without leading pipe
+  is continuation of last line.
 
-Other supported inline markups are 'interpreted text', 'interpreted text with role':emphasis:, standalone links http://www.google.com
+Other supported inline markups are `interpreted text`, `interpreted text with role`:emphasis:, standalone links http://www.google.com
 
 ----
 
@@ -62,7 +62,7 @@ Lists
 
 
 Tables
-------
+======
 reStructuredText support grid tables:
 
 +-------+----------+------+
@@ -95,12 +95,12 @@ column spanning spans
 
 
 Headers
--------
+=======
 Headers are underlined or under- and overlined by ``-`` ``=`` or ``~``. Same style means section of same level. Document title is the unique section header at the beginning of document.
 
 
 Links
------
+=====
 Besides [link like this](http://www.google.com), we can also have [relative links](../dir/file.txt) or [reference-style link][myref] or [numbered-reference][1] or [simply the link text] or type in URL directly http://slashdot.org or <http://github.com>
 
 Remember to define the links somewhere.
@@ -111,35 +111,102 @@ Remember to define the links somewhere.
 
 
 Images
-------
-Images are links with leading exclamation mark (hover to see the title text):
+======
+Images is a directive with optional parameters
 
-Inline-style: 
-![alt text](https://github.com/favicon.ico "Fav Icon")
-
-Reference-style: 
-![alt text][logo]
-
-[logo]: https://github.com/favicon.ico "Fav Icon"
+..image:: /favicon.ico
+    :height: 50
+    :width: 50
+    :scale: 100
 
 
-Task list
----------
-Part of GFM,
-- [x] @mentions, #refs, [links](), **formatting**, and <del>tags</del> supported
-- [x] list syntax required (any unordered or ordered list supported)
-- [x] this is a complete item
-- [ ] this is an incomplete item
 
-HTML
-----
-Markdown supports inline HTML, such as linking youtube
+================  ============================================================
+Explicit Markup   Examples (visible in the `text source`_)
+================  ============================================================
+Footnote          .. [1] Manually numbered or [#] auto-numbered
+                     (even [#labelled]) or [*] auto-symbol
+Citation          .. [CIT2002] A citation.
+Hyperlink Target  .. _reStructuredText: http://docutils.sf.net/rst.html
+                  .. _indirect target: reStructuredText_
+                  .. _internal target:
+Anonymous Target  __ http://docutils.sf.net/docs/ref/rst/restructuredtext.html
+Directive ("::")  .. image:: images/biohazard.png
+Substitution Def  .. |substitution| replace:: like an inline directive
+Comment           .. is anything else
+Empty Comment     (".." on a line by itself, with blank lines before & after,
+                  used to separate indentation contexts)
+================  ============================================================
 
-<a href="http://www.youtube.com/watch?feature=player_embedded&v=YOUTUBE_VIDEO_ID_HERE
-" target="_blank"><img src="http://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg" 
-alt="IMAGE ALT TEXT HERE" width="240" height="180" border="10" /></a>
 
+Inline Markup
+=============
+*emphasis*; **strong emphasis**; `interpreted text`; `interpreted text
+with role`:emphasis:; ``inline literal text``; standalone hyperlink,
+http://docutils.sourceforge.net; named reference, reStructuredText_;
+`anonymous reference`__; footnote reference, [1]_; citation reference,
+[CIT2002]_; |substitution|; _`inline internal target`.
+
+Directive Quick Reference
+=========================
+See <http://docutils.sf.net/docs/ref/rst/directives.html> for full info.
+
+================  ============================================================
+Directive Name    Description (Docutils version added to, in [brackets])
+================  ============================================================
+attention         Specific admonition; also "caution", "danger",
+                  "error", "hint", "important", "note", "tip", "warning"
+admonition        Generic titled admonition: ``.. admonition:: By The Way``
+image             ``.. image:: picture.png``; many options possible
+figure            Like "image", but with optional caption and legend
+topic             ``.. topic:: Title``; like a mini section
+sidebar           ``.. sidebar:: Title``; like a mini parallel document
+parsed-literal    A literal block with parsed inline markup
+rubric            ``.. rubric:: Informal Heading``
+epigraph          Block quote with class="epigraph"
+highlights        Block quote with class="highlights"
+pull-quote        Block quote with class="pull-quote"
+compound          Compound paragraphs [0.3.6]
+container         Generic block-level container element [0.3.10]
+table             Create a titled table [0.3.1]
+list-table        Create a table from a uniform two-level bullet list [0.3.8]
+csv-table         Create a table from CSV data [0.3.4]
+contents          Generate a table of contents
+sectnum           Automatically number sections, subsections, etc.
+header, footer    Create document decorations [0.3.8]
+target-notes      Create an explicit footnote for each external target
+math              Mathematical notation (input in LaTeX format)
+meta              HTML-specific metadata
+include           Read an external reST file as if it were inline
+raw               Non-reST data passed untouched to the Writer
+replace           Replacement text for substitution definitions
+unicode           Unicode character code conversion for substitution defs
+date              Generates today's date; for substitution defs
+class             Set a "class" attribute on the next element
+role              Create a custom interpreted text role [0.3.2]
+default-role      Set the default interpreted text role [0.3.10]
+title             Set the metadata document title [0.3.10]
+================  ============================================================
+
+Interpreted Text Role Quick Reference
+=====================================
+See <http://docutils.sf.net/docs/ref/rst/roles.html> for full info.
+
+================  ============================================================
+Role Name         Description
+================  ============================================================
+emphasis          Equivalent to *emphasis*
+literal           Equivalent to ``literal`` but processes backslash escapes
+math              Mathematical notation (input in LaTeX format)
+PEP               Reference to a numbered Python Enhancement Proposal
+RFC               Reference to a numbered Internet Request For Comments
+raw               For non-reST data; cannot be used directly (see docs) [0.3.6]
+strong            Equivalent to **strong**
+sub               Subscript
+sup               Superscript
+title             Title reference (book, etc.); standard default role
+================  ============================================================
 
 Others
-------
+======
 Emoji :smile: :alien: :v: at http://www.emoji-cheat-sheet.com/
