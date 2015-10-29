@@ -5,7 +5,8 @@ reStructuredText syntax
 :Info: This file is located at http://github/righthandabacus
 :Date: Thu Oct 29 01:02:11 EDT 2015
 :Revision: 0.1
-:Description: Experimenting all rst features. This is the "docinfo block" for bibliographic data
+:Description: Experimenting all rst features. This is the "docinfo block"
+              for bibliographic data
 
 Paragraphs are separated by empty lines, **bold** uses two asterisk while *italic* uses one. ``Monospace`` by backquote. Escape can be \*done\* by backslash preceding any character.
 
@@ -39,7 +40,8 @@ Other supported inline markups are `interpreted text`, `interpreted text with ro
 and horizontal rule is four or more dashes.
 
 .. Two leading dots marks comment, which will not be shown in output
-   but preserved in raw text. (comment text can be empty too)
+   but preserved in raw text. (empty comment is two dots with empty
+   lines before and after)
 
 
 Lists
@@ -114,10 +116,10 @@ Images
 ======
 Images is a directive with optional parameters
 
-    ..image:: /favicon.ico
-        :height: 50
-        :width: 50
-        :scale: 100
+..image:: favicon.co
+    :height: 50
+    :width: 50
+    :scale: 100
 
 
 
