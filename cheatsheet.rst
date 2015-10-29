@@ -116,7 +116,7 @@ Images
 ======
 Images is a directive with optional parameters
 
-..image:: favicon.co
+.. image:: favicon.co
     :height: 50
     :width: 50
     :scale: 100
