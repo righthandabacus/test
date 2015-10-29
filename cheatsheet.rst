@@ -1,13 +1,34 @@
-Github Flavored Markdown syntax
-===============================
+=======================
+RestructuredText syntax
+=======================
+:Author: Adrian
+:Info: This file is located at http://github/righthandabacus
+:Date: Thu Oct 29 01:02:11 EDT 2015
+:Revision: 0.1
+:Description: Experimenting all rst features. This is the "docinfo block" for bibliographic data
 
-Paragraphs are separated by empty lines, **bold** uses __two__ asterisk or underline while *italic* uses _one_ only. ~~Strikethrough~~ and ``monospace`` by tilde and backquote. Inline `code` has only one backquote. Escape can be \*done\* by backslash preceding any of ``\ ` * _ { } [ ] ( ) # + - . !``. You can even [link to Google!](http://google.com "with optional tooltip") using a parenthesis for URL and square bracket for text.
+Paragraphs are separated by empty lines, **bold** uses two asterisk while *italic* uses one. ``Monospace`` by backquote. Escape can be \*done\* by backslash preceding any character.
 
-Code block can be done by indentation of paragraph by 1-4 spaces
+Literal block is introduced by double colon::
 
-    like this
+    like this with indentation
 
-or without indentation but quoted by triple backquote (optionally language for syntax highlight):
+or without colons, as block quotes:
+
+    like this with indentation
+
+or even quote using > if no indent:
+
+> like this
+
+But it is a doctest block if we
+
+>>> print "quote like python"
+quote like python
+
+|Line blocks is to preserve line breaks and indents.
+|   We simply begine the lines with pipe to make
+| a line block.
 
 ```ruby
 require 'red carpet'
@@ -47,28 +68,40 @@ or underscores
 
 Tables
 ------
-GFM supports tables.
+reStructuredText support grid tables:
 
-Tables  | Can be done
---------|------------
-By using|pipes
-and     |hyphens
-even dashes and pipes|not perfectly line up
-and markups|can *also* ~~be~~ used
++-------+----------+------+
+| Table Headings   | Here |
++-------+----------+------+
+| Sub   | Headings | Too  |
++=======+==========+======+
+| cell  | column spanning |
++ spans +----------+------+
+| rows  | normal   | cell |
++-------+----------+------+
+| multi | * cells can be  |
+| line  | * formatted     |
+| cells | * paragraphs    |
+| too   |                 |
++-------+-----------------+
 
-|Left-aligned|Center-aligned|Right-aligned    |
-|:-----------|:------------:|----------------:|
-|columns     |can be done   |with             |
-|colons      |at the        |header row       |
-|extra pipes |at both ends  |are only aesthetic|
+and simple tables:
+
+===== ========= =====
+Table Headings  Here
+--------------- -----
+Sub   Headings  Too
+===== ========= =====
+column spanning no
+--------------- -----
+cell  cell      row
+column spanning spans
+=============== =====
 
 
 Headers
 -------
-Headers are underlined by = (H1 header) or - (H2 header). Alternatively, H1 to H6 of HTML can also be marked by 1 to 6 leading # sign at the line, like
-
-### this is h3
-#### and this is h4 with optional close hashes ########
+Headers are underlined or under- and overlined by ``-`` ``=`` or ``~``. Same style means section of same level
 
 
 Links
