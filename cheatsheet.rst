@@ -193,6 +193,11 @@ default-role      Set the default interpreted text role [0.3.10]
 title             Set the metadata document title [0.3.10]
 ================  ============================================================
 
+Example
+
+.. math:
+     \frac{1}{\sqrt{2\pi\sigma^2}}\int_{-\infty}^{\infty} \exp(-\frac{x^2}{2\sigma^2}) dx
+
 
 Interpreted Text Role Quick Reference
 =====================================
