@@ -4,7 +4,9 @@ Github Flavored Markdown syntax
 Paragraphs are separated by empty lines, **bold** uses __two__ asterisk or underline while *italic* uses _one_ only. ~~Strikethrough~~ or ``monospace`` can be done by tilde and backquote. Inline `code` has only one backquote. Escaping markup can be \*done\* by backslash preceding any of ``\ ` * _ { } [ ] ( ) # + - . !``. You can even [link to Google!](http://google.com "with optional tooltip") using a parenthesis for link and square bracket for text.
 
 Code block can be done by indentation of 1-4 spaces
+
     like this
+
 or without indentation but quoted by triple backquote (optionally language for syntax highlight):
 
 ```ruby
@@ -13,7 +15,6 @@ markdown = Redcarpet.new("hello world")
 ```
 
 Block quotes is indicated by >:
-
 > like this, with *markups* supported
 
 * ordered
