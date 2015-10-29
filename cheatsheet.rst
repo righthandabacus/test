@@ -16,6 +16,7 @@ Literal block is introduced by double colon::
 or without colons, as block quotes:
 
     like this with indentation
+    
         and they may nest
 
 or even quote using double colon and > if no indent::
