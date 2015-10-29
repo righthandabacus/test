@@ -36,7 +36,7 @@ Other supported inline markups are `interpreted text`, `interpreted text with ro
 
 ----
 
-and horizonal rule is four or more dashes.
+and horizontal rule is four or more dashes.
 
 .. Two leading dots marks comment, which will not be shown in output
    but preserved in raw text. (comment text can be empty too)
@@ -50,7 +50,7 @@ Lists
 * with \* or - or + as bullets
 
 1. Ordered list
-2. is preceded by "1." or "A." or "(i)" or "#.", etc.
+2. Is preceded by ``1.`` or ``A.`` or ``(i)`` or ``#.`` (auto numbered), etc.
     a. with nesting
     b. supported
 3. List item in paragraph form or multiple lines.
@@ -114,10 +114,10 @@ Images
 ======
 Images is a directive with optional parameters
 
-..image:: /favicon.ico
-    :height: 50
-    :width: 50
-    :scale: 100
+    ..image:: /favicon.ico
+        :height: 50
+        :width: 50
+        :scale: 100
 
 
 
@@ -188,6 +188,7 @@ default-role      Set the default interpreted text role [0.3.10]
 title             Set the metadata document title [0.3.10]
 ================  ============================================================
 
+
 Interpreted Text Role Quick Reference
 =====================================
 See <http://docutils.sf.net/docs/ref/rst/roles.html> for full info.
@@ -206,6 +207,7 @@ sub               Subscript
 sup               Superscript
 title             Title reference (book, etc.); standard default role
 ================  ============================================================
+
 
 Others
 ======
